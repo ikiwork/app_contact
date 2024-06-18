@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+/*reset css*/
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 0;
+}
+
+html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	margin: 0;
+}
+
+main {
+	display: block;
+}
+
+p,
+form {
+	margin: 0;
+}
+
+h1,
+h2 {
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+}
+
+button,
+input,
+textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	vertical-align: middle;
+	color: inherit;
+	font: inherit;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+	text-align: inherit;
+	text-transform: inherit;
+}
+
+[type="checkbox"] {
+	-webkit-appearance: checkbox;
+	appearance: checkbox;
+}
+
+[type="radio"] {
+	-webkit-appearance: radio;
+	appearance: radio;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	cursor: pointer;
+}
+
+button:disabled,
+[type="button"]:disabled,
+[type="reset"]:disabled,
+[type="submit"]:disabled {
+	cursor: default;
+}
+
+:-moz-focusring {
+	outline: auto;
+}
+
+select:disabled {
+	opacity: inherit;
+}
+
+option {
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+[type="search"] {
+	outline-offset: -2px;
+}
+
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+label[for] {
+	cursor: pointer;
+}
+
+* {
+	color: #333;
+	font-size: 16px;
+	line-height: 1.15;
+}
+
+h1 {
+	margin: 30px 0;
+	font-size: 25px;
+	text-align: center;
+}
+
+form {
+	width: 60%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+label {
+	margin-bottom: 3px;
+	text-align: left;
+	display: block;
+}
+
+label span {
+	padding-left: 5px;
+	color: red;
+}
+
+input:not(input[type="submit"]) {
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 7px 7px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	text-align: left;
+	display: block;
+}
+
+textarea {
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 7px 7px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	text-align: left;
+	display: block;
+}
+
+input[type="submit"] {
+	margin: 20px;
+	padding: 10px 15px;
+	background-color: #EEE;
+	border: 1px solid #BBB;
+	border-radius: 5px;
+	display: inline-block;
+}
+
+select {
+	width: 100%;
+	margin-bottom: 25px;
+	padding: 7px 7px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	text-align: left;
+	display: block;
+}
+
+p:not(.complete) {
+	width: 100%;
+	min-height: calc(1em * 1.15 + 7px * 2 + 2px);
+	margin-bottom: 25px;
+	padding: 7px 7px;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	text-align: left;
+	display: block;
+}
+
+.complete {
+	text-align: center;
+}
+
+.error {
+	width: 60%;
+	margin: 0 auto 30px;
+}
+
+.error li {
+	color: red;
+}
+
+df-messenger {
+	--df-messenger-button-titlebar-color: #fff;
+	/* タイトルバーとアイコンの背景色 */
+	--df-messenger-button-titlebar-font-color: #023f73;
+		/* フォントカラー */
+
+}
