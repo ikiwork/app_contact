@@ -2,14 +2,99 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<title>お問い合わせフォーム</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+
+<title>ご意見、お問い合わせフォーム</title>
 </head>
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="./js/faq.js"></script>
+<link rel="stylesheet" href="css/style.css">
 <body>
-<h1>お問い合わせフォーム</h1>
+<h1>よくあるご質問</h1>
+<div class="accordion">
+
+<div class="section ac">
+
+  <div class="accordion_one">
+    <div class="accordion_header">アコーディオンで多階層のメニューを作る<div class="i_box"><i class="one_i"></i></div></div>
+    <div class="accordion_inner">
+      <div class="accordion_one">
+        <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div></div>
+        <div class="accordion_inner">
+          <div class="accordion_one">
+            <div class="accordion_header">A_a</div>
+            <div class="accordion_header">A_b</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion_one">
+        <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div></div>
+        <div class="accordion_inner">
+          <div class="accordion_one">
+            <div class="accordion_header">B_a</div>
+            <div class="accordion_header">B_b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion_one">
+    <div class="accordion_header">アコーディオンで多階層のメニューを作る<div class="i_box"><i class="one_i"></i></div></div>
+    <div class="accordion_inner">
+      <div class="accordion_one">
+        <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div></div>
+        <div class="accordion_inner">
+          <div class="accordion_one">
+            <div class="accordion_header">A_a</div>
+            <div class="accordion_header">A_b</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion_one">
+        <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div></div>
+        <div class="accordion_inner">
+          <div class="accordion_one">
+            <div class="accordion_header">B_a</div>
+            <div class="accordion_header">B_b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="accordion_one">
+    <div class="accordion_header">アコーディオンで多階層のメニューを作る<div class="i_box"><i class="one_i"></i></div></div>
+    <div class="accordion_inner">
+      <div class="accordion_one">
+        <div class="accordion_header">A<div class="i_box"><i class="one_i"></i></div></div>
+        <div class="accordion_inner">
+          <div class="accordion_one">
+            <div class="accordion_header">A_a</div>
+            <div class="accordion_header">A_b</div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion_one">
+        <div class="accordion_header">B<div class="i_box"><i class="one_i"></i></div></div>
+        <div class="accordion_inner">
+          <div class="accordion_one">
+            <div class="accordion_header">B_a</div>
+            <div class="accordion_header">B_b</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<h1>ご意見、お問い合わせフォーム</h1>
+<div class="coution"><label><span>*</span></label>全必須項目</div>
 <?php
 // 変数（フラグ）の初期化
 $flag = 0;
@@ -127,6 +212,7 @@ if ( $flag === 1 ) {
   // 確認画面のHTMLコード
   ?>
 <form method="post" action="">
+<div class="form_wrap">
   <label>お名前<span>*</span></label>
   <p><?php echo $esc['username'] ?></p>
   <label>メールアドレス<span>*</span></label>
@@ -135,8 +221,9 @@ if ( $flag === 1 ) {
   <p><?php echo $esc['questions'] ?></p>
   <label>お問い合わせ内容<span>*</span></label>
   <p><?php echo $esc['message'] ?></p>
-  <input type="submit" name="back" value="戻る">
-  <input type="submit" name="submit" value="送信">
+</div>
+  <input type="submit" name="back" value="戻る" class="hover-transition">
+  <input type="submit" name="submit" value="送信" class="hover-transition">
   
   <!-- データを受け渡すために一時的に保存 -->
   <input type="hidden" name="username" value="<?php echo $esc['username'] ?>">
@@ -150,6 +237,7 @@ if ( $flag === 1 ) {
   // 送信完了画面のHTMLコード
   ?>
 <p class="complete">送信が完了しました。</p>
+<p class="complete"><a href="./index.php" class="border_btn ">戻る</a></p>
 <?php
 
 } else {
@@ -165,6 +253,7 @@ if ( $flag === 1 ) {
 }
 ?>
 <form method="post" action="">
+  <div class="form_wrap">
   <label>お名前<span>*</span></label>
   <input type="text" name="username" value="<?php if (!empty($esc['username'])) {
 					echo $esc['username'];
@@ -186,13 +275,24 @@ if ( $flag === 1 ) {
   }
   ?>
 </textarea>
-  <input type="submit" name="confirm" value="確認画面へ">
+</div>
+  <input type="submit" name="confirm" value="確認画面へ" class="hover-transition">
 </form>
 <?php
 }
 ?>
-<df-messenger intent="WELCOME" chat-title="FAQ" agent-id="c9980bce-dcba-46d5-803f-03640e5b88cc" language-code="ja"
-		chat-icon="./img/o.svg"></df-messenger>
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="FAQ"
+  df-messenger-font-size="2rem"
+  chat-title-icon="./img/o.svg"
+  agent-id="c47f59c5-4736-4676-bc6e-f28a4b719790"
+  language-code="ja"
+  chat-icon="./img/o.svg"
+>
+</df-messenger>
+
 </body>
 </html>
